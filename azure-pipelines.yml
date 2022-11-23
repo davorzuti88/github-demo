@@ -22,7 +22,7 @@ stages:
     steps:
     - task: 6d15af64-176c-496d-b583-fd2ae21d4df4@1
       inputs:
-        repository: test_toni
+        repository: github-demo
   - job: helloworld
     steps:
     - task: CmdLine@2
