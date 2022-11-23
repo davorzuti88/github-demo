@@ -14,7 +14,7 @@ variables:
 - name: name
   value: Davor
 pool:
-  name: default
+  name: davor-pool
 stages:
 - stage: __default
   jobs:
