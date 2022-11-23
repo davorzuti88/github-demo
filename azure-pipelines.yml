@@ -1,19 +1,31 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
-trigger:
-- main
-
+name: 1.0.0$(Rev:.r)
+resources:
+  repositories:
+  - repository: github-demo
+    type: github
+    name: davorzuti88/github-demo
+    endpoint: github.com_davorzuti88
+    ref: main
+    trigger:
+      branches:
+        include:
+        - refs/heads/main
+variables:
+- name: name
+  value: Davor
 pool:
-  vmImage: ubuntu-latest
+  name: default
+stages:
+- stage: __default
+  jobs:
+  - job: checkout
+    steps:
+    - task: 6d15af64-176c-496d-b583-fd2ae21d4df4@1
+      inputs:
+        repository: test_toni
+  - job: helloworld
+    steps:
+    - task: CmdLine@2
+      inputs:
+        script: echo "Hello, $(name)"
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
