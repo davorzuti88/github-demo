@@ -18,7 +18,7 @@ jobs:
   startup:
     runs-on: Zuti
     steps:
-      - run: test_script.sh
+      - run: echo Hello, world!
 
   # This workflow contains a single job called "build"
   build:
