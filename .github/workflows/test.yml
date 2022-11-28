@@ -20,6 +20,11 @@ jobs:
     steps:
       - name: Run a one-line script
         run: echo Hello, world!
+        ## Podesuvanje na variabli
+        env:
+            PROJECT_SERVER: ${{ secrets.PROJECT_SERVER }}
+            PROJECT_DATABASE: ${{ secrets.PROJECT_DATABASE }}
+            DB_ENVIROMENT: DEV
 
   # This workflow contains a single job called "build"
   build:
